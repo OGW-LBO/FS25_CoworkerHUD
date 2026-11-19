@@ -1,4 +1,4 @@
-# Mitspieler HUD
+# Coworker HUD
 
 Zeigt im Mehrspieler, was die Mitspieler des eigenen Hofs geladen haben.
 
@@ -17,7 +17,7 @@ Am eigenen Tacho kommt dazu:
 
 Fällt der Diesel unter 10 Prozent, gibt es alle halbe Minute einen Doppelton. Nur beim eigenen Fahrzeug und nur auf deinem Rechner.
 
-Nutzt du auch meinen Spurfolger, steht in der Liste zusätzlich, wem ein Fahrzeug gerade hinterherfährt. Nötig ist das nicht - ohne die Mod fällt die Zeile einfach weg.
+Nutzt du auch meinen Spurfolger (FS25_TrailMe), steht in der Liste zusätzlich, wem ein Fahrzeug gerade hinterherfährt. Nötig ist das nicht - ohne die Mod fällt die Zeile einfach weg.
 
 Die Mod zeigt bloß an. Sie schreibt nichts in den Spielstand und läuft auf Dedicated Servern, weil sie ausschließlich Werte liest, die ohnehin über die Leitung gehen.
 
@@ -32,7 +32,7 @@ Auf einem Dedicated Server gehoert sie in dessen Mods-Ordner.
 
 ## Stand
 
-Version 1.1.1.0, gebaut gegen descVersion 116.
+Version 1.1.2.0, gebaut gegen descVersion 116.
 
 ## Lizenz
 

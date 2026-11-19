@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <modDesc descVersion="116">
     <author>OGW</author>
-    <version>1.1.1.0</version>
+    <version>1.1.2.0</version>
     <title>
         <en>Coworker HUD</en>
-        <de>Mitspieler HUD</de>
-        <fr>HUD Coéquipiers</fr>
+        <de>Coworker HUD</de>
+        <fr>Coworker HUD</fr>
     </title>
     <description>
         <en><![CDATA[In multiplayer you rarely know how far the others have got. Is your mate's trailer full already? Does that seeder need a refill? This mod puts the answer next to the clock.
@@ -41,7 +41,7 @@ Am eigenen Tacho kommt dazu:
 
 Fällt der Diesel unter 10 Prozent, gibt es alle halbe Minute einen Doppelton. Nur beim eigenen Fahrzeug und nur auf deinem Rechner.
 
-Nutzt du auch meinen Spurfolger, steht in der Liste zusätzlich, wem ein Fahrzeug gerade hinterherfährt. Nötig ist das nicht - ohne die Mod fällt die Zeile einfach weg.
+Nutzt du auch meinen Spurfolger (FS25_TrailMe), steht in der Liste zusätzlich, wem ein Fahrzeug gerade hinterherfährt. Nötig ist das nicht - ohne die Mod fällt die Zeile einfach weg.
 
 Die Mod zeigt bloß an. Sie schreibt nichts in den Spielstand und läuft auf Dedicated Servern, weil sie ausschließlich Werte liest, die ohnehin über die Leitung gehen.]]></de>
         <fr><![CDATA[En multijoueur, on sait rarement où en sont les autres. La remorque du collègue est-elle déjà pleine ? Le semoir a-t-il besoin d'être rempli ? Ce mod affiche la réponse à côté de l'horloge.
@@ -59,7 +59,7 @@ Sur votre propre compteur s'ajoutent :
 
 Sous 10 pour cent de carburant, un double bip revient toutes les 30 secondes. Uniquement pour votre véhicule et uniquement chez vous.
 
-Si vous utilisez aussi mon Sur Ma Trace, la liste indique en plus quel véhicule un suiveur accompagne. Ce n'est pas obligatoire : sans ce mod, la ligne n'apparaît tout simplement pas.
+Si vous utilisez aussi mon Sur Ma Trace (Trail Me / FS25_TrailMe), la liste indique en plus quel véhicule un suiveur accompagne. Ce n'est pas obligatoire : sans ce mod, la ligne n'apparaît tout simplement pas.
 
 Ce mod ne fait qu'afficher. Il n'écrit rien dans la sauvegarde et fonctionne sur serveur dédié, car il lit seulement des valeurs déjà synchronisées par le jeu.]]></fr>
     </description>
@@ -128,8 +128,8 @@ Ce mod ne fait qu'afficher. Il n'écrit rien dans la sauvegarde et fonctionne su
         </text>
         <text name="MHUD_help_section">
             <en>Coworker HUD</en>
-            <de>Mitspieler HUD</de>
-            <fr>HUD Coéquipiers</fr>
+            <de>Coworker HUD</de>
+            <fr>Coworker HUD</fr>
         </text>
         <text name="MHUD_help_intro">
             <en>Everything this mod shows is read from data the game already has, so it works as a client on a dedicated server and never touches your savegame.</en>

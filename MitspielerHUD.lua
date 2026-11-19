@@ -1014,7 +1014,7 @@ function MitspielerHUD:consoleToggleTest()
 end
 
 function MitspielerHUD:loadMap()
-    print("MitspielerHUD: geladen (Build 58)")
+    print("MitspielerHUD: geladen (Build 59)")
 
     -- Uebersetzungen einmalig cachen
     self.txtEmpty = getLocText("MHUD_empty", "leer")
