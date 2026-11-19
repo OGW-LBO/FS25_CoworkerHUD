@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<modDesc descVersion="116">
+    <author>OGW</author>
+    <version>1.1.0.0</version>
+    <title>
+        <en>Coworker HUD</en>
+        <de>Mitspieler HUD</de>
+        <fr>HUD Coéquipiers</fr>
+    </title>
+    <description>
+        <en><![CDATA[In multiplayer you rarely know how far the others have got. Is your mate's trailer full already? Does that seeder need a refill? This mod puts the answer next to the clock.
+
+For every player on your farm it shows what they are hauling: fill type, litres and how much fits in, so something like "Wheat 12,500 / 18,000 l (69%)". When it gets tight, the entry turns red. Above 95 percent for a load, below 15 percent for seed, fertiliser, lime, slurry or manure – those count the other way round, front tank included. Empty containers stay in the list, otherwise you cannot tell who still has room.
+
+Vehicles driven by a helper appear there as well, so you notice when the helper's combine is filling up.
+
+On your own dashboard you get:
+
+- the odometer
+- weight of the tractor, in brackets whatever is hitched up including its load
+- engine load in percent
+- litres in the tank, right above the fuel bar
+
+Drop below 10 percent fuel and a double beep reminds you every 30 seconds. Your own vehicle only, and only on your machine.
+
+This is a display mod. It writes nothing to the savegame and works on dedicated servers, because it only reads values the game synchronises anyway.]]></en>
+        <de><![CDATA[Im Mehrspieler weiß man selten, wie weit die anderen gerade sind. Ist der Anhänger vom Kollegen schon voll? Muss die Sämaschine gleich nachgefüllt werden? Diese Mod schreibt es oben neben die Uhrzeit.
+
+Pro Spieler deines Hofs steht dort, was er geladen hat: Füllart, Liter und wie viel hineinpasst, also zum Beispiel "Weizen 12.500 / 18.000 l (69%)". Wird es eng, färbt sich der Eintrag rot. Bei Ladung ab 95 Prozent, bei Saatgut, Dünger, Kalk, Gülle oder Mist dagegen unter 15 Prozent – die zählen ja rückwärts, auch wenn sie in einem Fronttank sitzen. Leere Behälter bleiben in der Liste, sonst sieht man nicht, wer noch Platz hat.
+
+Fahrzeuge, auf denen ein Helfer sitzt, stehen mit in der Leiste. So bekommt man auch mit, wenn der Drescher des Helfers zuläuft.
+
+Am eigenen Tacho kommt dazu:
+
+- Kilometerstand
+- Gewicht der Zugmaschine, in Klammern das Angehängte samt Ladung
+- Motorlast in Prozent
+- Tankinhalt in Litern über dem Balken
+
+Fällt der Diesel unter 10 Prozent, gibt es alle halbe Minute einen Doppelton. Nur beim eigenen Fahrzeug und nur auf deinem Rechner.
+
+Die Mod zeigt bloß an. Sie schreibt nichts in den Spielstand und läuft auf Dedicated Servern, weil sie ausschließlich Werte liest, die ohnehin über die Leitung gehen.]]></de>
+        <fr><![CDATA[En multijoueur, on sait rarement où en sont les autres. La remorque du collègue est-elle déjà pleine ? Le semoir a-t-il besoin d'être rempli ? Ce mod affiche la réponse à côté de l'horloge.
+
+Pour chaque joueur de votre ferme, vous voyez son chargement : type de remplissage, litres et capacité, par exemple « Blé 12 500 / 18 000 l (69 %) ». Quand ça devient serré, l'entrée passe au rouge : au-dessus de 95 pour cent pour un chargement, en dessous de 15 pour cent pour les semences, l'engrais, la chaux, le lisier ou le fumier – ceux-là comptent à l'envers, trémie frontale comprise. Les conteneurs vides restent dans la liste, sinon impossible de voir qui a encore de la place.
+
+Les véhicules conduits par un assistant y figurent aussi : vous remarquez donc quand sa moissonneuse se remplit.
+
+Sur votre propre compteur s'ajoutent :
+
+- le compteur kilométrique
+- le poids du tracteur, entre parenthèses l'attelage avec son chargement
+- la charge moteur en pourcentage
+- les litres dans le réservoir, juste au-dessus de la jauge
+
+Sous 10 pour cent de carburant, un double bip revient toutes les 30 secondes. Uniquement pour votre véhicule et uniquement chez vous.
+
+Ce mod ne fait qu'afficher. Il n'écrit rien dans la sauvegarde et fonctionne sur serveur dédié, car il lit seulement des valeurs déjà synchronisées par le jeu.]]></fr>
+    </description>
+    <iconFilename>icon_mod.dds</iconFilename>
+    <multiplayer supported="true"/>
+    <extraSourceFiles>
+        <sourceFile filename="MitspielerHUD.lua"/>
+    </extraSourceFiles>
+    <helpLines>
+        <category title="$l10n_MHUD_help_section">
+            <page id="coworkerHudHelp" title="$l10n_MHUD_help_section" iconFilename="icon_mod.dds">
+                <paragraph>
+                    <text text="$l10n_MHUD_help_intro" />
+                </paragraph>
+                <paragraph>
+                    <title text="$l10n_MHUD_help_top" />
+                    <image filename="pikto_anhaenger.dds" size="64 64" aspectRatio="1" />
+                    <text text="$l10n_MHUD_help_topDesc" alignToImage="true" />
+                </paragraph>
+                <paragraph>
+                    <title text="$l10n_MHUD_help_bar" />
+                    <image filename="pikto_traktor.dds" size="64 64" aspectRatio="1" />
+                    <text text="$l10n_MHUD_help_barDesc" alignToImage="true" />
+                </paragraph>
+                <paragraph>
+                    <title text="$l10n_MHUD_help_fuel" />
+                    <text text="$l10n_MHUD_help_fuelDesc" />
+                </paragraph>
+                <paragraph>
+                    <title text="$l10n_MHUD_help_test" />
+                    <text text="$l10n_MHUD_help_testDesc" />
+                </paragraph>
+            </page>
+        </category>
+    </helpLines>
+    <l10n>
+        <text name="MHUD_empty">
+            <en>empty</en>
+            <de>leer</de>
+            <fr>vide</fr>
+        </text>
+        <text name="MHUD_load">
+            <en>Load</en>
+            <de>Last</de>
+            <fr>Charge</fr>
+        </text>
+        <text name="MHUD_me">
+            <en>ME</en>
+            <de>ICH</de>
+            <fr>MOI</fr>
+        </text>
+        <text name="MHUD_helper">
+            <en>Helper</en>
+            <de>Helfer</de>
+            <fr>Assistant</fr>
+        </text>
+        <text name="MHUD_follows">
+            <de>folgt</de>
+            <en>follows</en>
+            <fr>suit</fr>
+        </text>
+        <text name="MHUD_help_section">
+            <en>Coworker HUD</en>
+            <de>Mitspieler HUD</de>
+            <fr>HUD Coéquipiers</fr>
+        </text>
+        <text name="MHUD_help_intro">
+            <en>Everything this mod shows is read from data the game already has, so it works as a client on a dedicated server and never touches your savegame.</en>
+            <de>Alles, was hier angezeigt wird, liest die Mod aus Daten, die im Spiel ohnehin vorliegen. Sie läuft deshalb auch als Client auf einem Dedicated Server und fasst den Spielstand nicht an.</de>
+            <fr>Tout ce qui est affiché provient de données que le jeu possède déjà. Le mod fonctionne donc en client sur serveur dédié et ne touche pas à la sauvegarde.</fr>
+        </text>
+        <text name="MHUD_help_top">
+            <en>Coworker bar (top)</en>
+            <de>Mitspieler-Leiste (oben)</de>
+            <fr>Barre des coéquipiers (en haut)</fr>
+        </text>
+        <text name="MHUD_help_topDesc">
+            <en>Shows next to the game clock what every player of your farm is hauling: fill type, current liters and capacity of each container, for example 'Wheat 12,500 / 18,000 l (69%)'. Red = load almost full (95%) or supplies almost empty (15%). Seed, fertilizer, lime, slurry, manure and feed count as supplies - in the implement as well as in a front tank. Empty containers are shown as well. Anyone without a container attached is left out entirely. Vehicles with a running helper are listed too, named after the helper.</en>
+            <de>Zeigt links neben der Uhrzeit für jeden Spieler deines Hofs die Ladung des gesamten Gespanns: Füllart, aktuelle Liter und Fassungsvermögen jedes Behälters, zum Beispiel 'Weizen 12.500 / 18.000 l (69 %)'. Rot = Ladung fast voll (95 %) oder Nachschub fast leer (15 %). Als Nachschub gelten Saatgut, Dünger, Kalk, Gülle, Mist und Futter - im Gerät ebenso wie in einem Fronttank. Leere Behälter werden ebenfalls angezeigt. Wer gar nichts mit Behälter dranhat, steht nicht in der Leiste. Fahrzeuge mit laufendem Helfer stehen ebenfalls in der Leiste, benannt nach dem Helfer.</de>
+            <fr>Affiche à côté de l'horloge ce que chaque joueur de votre ferme transporte : type de remplissage, litres actuels et capacité de chaque conteneur, par exemple 'Blé 12 500 / 18 000 l (69 %)'. Rouge = chargement presque plein (95 %) ou approvisionnement presque vide (15 %). Semences, engrais, chaux, lisier, fumier et fourrage comptent comme approvisionnement - dans l'outil comme dans une trémie frontale. Les conteneurs vides sont aussi affichés. Celui qui n'a aucun conteneur attelé n'apparaît pas du tout. Les véhicules avec un assistant actif sont listés aussi, au nom de l'assistant.</fr>
+        </text>
+        <text name="MHUD_help_bar">
+            <en>Vehicle bar (below speedometer)</en>
+            <de>Fahrzeug-Leiste (unter dem Tacho)</de>
+            <fr>Barre du véhicule (sous le compteur)</fr>
+        </text>
+        <text name="MHUD_help_barDesc">
+            <en>In the bar below the speedometer: tractor icon = weight of the tractor, in brackets the attached rig including load; in the middle the road symbol with the odometer; on the right the engine load in percent. Above the fuel gauge bar the current tank content in liters is shown.</en>
+            <de>In der Leiste unter dem Tacho: Traktor-Symbol = Gewicht der Zugmaschine, dahinter in Klammern das Angehängte inkl. Ladung; in der Mitte das Straßen-Symbol mit dem Kilometerstand; rechts die Motorlast in Prozent. Über dem Tank-Balken wird der aktuelle Tankinhalt in Litern angezeigt.</de>
+            <fr>Dans la barre sous le compteur : icône tracteur = poids du tracteur, entre parenthèses l'attelage avec chargement ; au milieu le symbole de route avec le compteur kilométrique ; à droite la charge moteur en pourcentage. Au-dessus de la jauge de carburant, le contenu actuel du réservoir en litres est affiché.</fr>
+        </text>
+        <text name="MHUD_help_fuel">
+            <en>Low fuel warning</en>
+            <de>Tankwarnung</de>
+            <fr>Alerte carburant</fr>
+        </text>
+        <text name="MHUD_help_fuelDesc">
+            <en>If your vehicle's tank drops below 10%, a double beep sounds and repeats every 30 seconds until you refuel. Applies only to your own vehicle and is only audible locally.</en>
+            <de>Fällt der Tank deines Fahrzeugs unter 10 %, ertönt ein Doppelton, danach alle 30 Sekunden erneut, bis getankt wurde. Gilt nur für das eigene Fahrzeug und ist nur lokal hörbar.</de>
+            <fr>Si le réservoir de votre véhicule passe sous 10 %, un double bip retentit puis se répète toutes les 30 secondes jusqu'au ravitaillement. Concerne uniquement votre véhicule et n'est audible que localement.</fr>
+        </text>
+        <text name="MHUD_help_test">
+            <en>Test mode</en>
+            <de>Testmodus</de>
+            <fr>Mode test</fr>
+        </text>
+        <text name="MHUD_help_testDesc">
+            <en>Console command 'mhudTest' (developer console required): unoccupied farm vehicles and your own rig are shown like coworkers - for testing without other players. Enter again to turn off.</en>
+            <de>Konsolenbefehl 'mhudTest' (Entwicklerkonsole nötig): unbesetzte Hof-Fahrzeuge und das eigene Gespann werden wie Mitspieler angezeigt - zum Ausprobieren ohne weitere Spieler. Erneut eingeben schaltet ab.</de>
+            <fr>Commande console 'mhudTest' (console développeur requise) : les véhicules libres de la ferme et votre attelage sont affichés comme des coéquipiers - pour tester sans autres joueurs. Saisir à nouveau pour désactiver.</fr>
+        </text>
+    </l10n>
+</modDesc>
