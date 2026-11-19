@@ -32,7 +32,7 @@ Auf einem Dedicated Server gehoert sie in dessen Mods-Ordner.
 
 ## Stand
 
-Version 1.1.0.0, gebaut gegen descVersion 116.
+Version 1.1.1.0, gebaut gegen descVersion 116.
 
 ## Lizenz
 

@@ -655,9 +655,46 @@ local function getFarmEconomyUsage(vehicle)
     return anzeige or string.format("%.0f l/h", lph), modus
 end
 
--- Name des Helfers am Steuer, sonst nil. Der Job kennt nur den Index,
--- den Namen hat der HelperManager. Nicht ueber job:getHelperName() -
--- das greift ungeprueft auf helper.title zu, und helper kann nil sein.
+--- Fahrzeugname, auf eine fuer die Leiste vertraegliche Laenge gekuerzt.
+--- Geschnitten wird nur an Zeichengrenzen, sonst wird aus einem Umlaut ein
+--- Kaestchen.
+local function getShortName(vehicle, maxZeichen)
+    if vehicle == nil or vehicle.getName == nil then
+        return nil
+    end
+
+    local name = vehicle:getName()
+
+    if type(name) ~= "string" or name == "" then
+        return nil
+    end
+
+    local zeichen = 0
+    local i = 1
+
+    while i <= #name do
+        if zeichen >= maxZeichen then
+            return string.sub(name, 1, i - 1) .. "."
+        end
+
+        local b = string.byte(name, i)
+        local schritt = 1
+
+        if b >= 240 then
+            schritt = 4
+        elseif b >= 224 then
+            schritt = 3
+        elseif b >= 192 then
+            schritt = 2
+        end
+
+        zeichen = zeichen + 1
+        i = i + schritt
+    end
+
+    return name
+end
+
 --- Wem faehrt dieses Fahrzeug hinterher? Geht die Reihe nach vorne durch, bis
 --- ein besetztes Fahrzeug kommt, und liefert dessen Fahrer. Die Funktionen
 --- fmFolgtGerade und fmGetZiel haengen am Fahrzeug, wenn die Mod "Spurfolger"
@@ -668,6 +705,9 @@ local function getFollowName(vehicle)
     end
 
     local label   = MitspielerHUD.txtFollows or "folgt"
+    local eigen   = getShortName(vehicle, 16)
+                    or MitspielerHUD.txtVehicle or "Fahrzeug"
+    local ziel    = nil
     local aktuell = vehicle
     local tiefe   = 0
 
@@ -686,17 +726,15 @@ local function getFollowName(vehicle)
                         and vorne.spec_enterable.isControlled == true
 
         if besetzt then
-            local name = nil
-
             if vorne.getControllerName ~= nil then
-                name = vorne:getControllerName()
+                local name = vorne:getControllerName()
+
+                if name ~= nil and name ~= "" then
+                    ziel = name
+                end
             end
 
-            if name ~= nil and name ~= "" then
-                return label .. " " .. name
-            end
-
-            return label
+            break
         end
 
         if vorne.fmFolgtGerade == nil or not vorne:fmFolgtGerade() then
@@ -707,9 +745,18 @@ local function getFollowName(vehicle)
         tiefe   = tiefe + 1
     end
 
-    return label
+    -- "Bandit folgt OGW" statt nur "folgt OGW": Wer mehrere Reihen unterwegs
+    -- hat, sieht sonst nicht, welches Gespann die Zeile meint.
+    if ziel ~= nil then
+        return string.format("%s %s %s", eigen, label, ziel)
+    end
+
+    return string.format("%s %s", eigen, label)
 end
 
+-- Name des Helfers am Steuer, sonst nil. Der Job kennt nur den Index,
+-- den Namen hat der HelperManager. Nicht ueber job:getHelperName() -
+-- das greift ungeprueft auf helper.title zu, und helper kann nil sein.
 local function getHelperName(vehicle)
     local spec = vehicle.spec_aiJobVehicle
     if spec == nil or spec.job == nil then
@@ -967,7 +1014,7 @@ function MitspielerHUD:consoleToggleTest()
 end
 
 function MitspielerHUD:loadMap()
-    print("MitspielerHUD: geladen (Build 57)")
+    print("MitspielerHUD: geladen (Build 58)")
 
     -- Uebersetzungen einmalig cachen
     self.txtEmpty = getLocText("MHUD_empty", "leer")
@@ -975,6 +1022,7 @@ function MitspielerHUD:loadMap()
     self.txtMe = getLocText("MHUD_me", "ICH")
     self.txtHelper = getLocText("MHUD_helper", "Helfer")
     self.txtFollows = getLocText("MHUD_follows", "folgt")
+    self.txtVehicle = getLocText("MHUD_vehicle", "Fahrzeug")
 
     -- Testbefehl registrieren (nur mit aktivierter Entwicklerkonsole nutzbar)
     if not self.consoleRegistered and addConsoleCommand ~= nil then

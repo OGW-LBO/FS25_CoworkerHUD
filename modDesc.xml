@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <modDesc descVersion="116">
     <author>OGW</author>
-    <version>1.1.0.0</version>
+    <version>1.1.1.0</version>
     <title>
         <en>Coworker HUD</en>
         <de>Mitspieler HUD</de>
@@ -120,6 +120,11 @@ Ce mod ne fait qu'afficher. Il n'écrit rien dans la sauvegarde et fonctionne su
             <de>folgt</de>
             <en>follows</en>
             <fr>suit</fr>
+        </text>
+        <text name="MHUD_vehicle">
+            <de>Fahrzeug</de>
+            <en>Vehicle</en>
+            <fr>Véhicule</fr>
         </text>
         <text name="MHUD_help_section">
             <en>Coworker HUD</en>
