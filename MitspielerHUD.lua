@@ -660,7 +660,7 @@ end
 -- das greift ungeprueft auf helper.title zu, und helper kann nil sein.
 --- Wem faehrt dieses Fahrzeug hinterher? Geht die Reihe nach vorne durch, bis
 --- ein besetztes Fahrzeug kommt, und liefert dessen Fahrer. Die Funktionen
---- fmFolgtGerade und fmGetZiel haengen am Fahrzeug, wenn die Mod "Folge Mir"
+--- fmFolgtGerade und fmGetZiel haengen am Fahrzeug, wenn die Mod "Spurfolger"
 --- geladen ist - ohne sie liefert die Funktion nil und es aendert sich nichts.
 local function getFollowName(vehicle)
     if vehicle == nil or vehicle.fmFolgtGerade == nil or not vehicle:fmFolgtGerade() then
